@@ -74,7 +74,8 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    #footer ul .router-link-active{
+    /* 路由切换时候显示的颜色 */
+    #footer ul .router-link-active{  
         color:#c33;
     }
     #footer ul li i{

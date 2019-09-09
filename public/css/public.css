@@ -73,3 +73,10 @@ body,
         body{
             font-size: .16rem;
         }
+        .page{
+          
+            /* bottom: 0;
+            left: 0;
+            right: 0; */
+            margin-bottom: .7rem;
+        }

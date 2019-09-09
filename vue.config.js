@@ -3,8 +3,8 @@ module.exports = {
     //跨域的配置
     devServer:{
         proxy:{
-            "/api":{
-                target:"http://39.97.33.178",
+            "/server":{
+                target:"https://m.228.cn",
                 changeOrigin:true
             }
         }
