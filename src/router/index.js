@@ -4,6 +4,7 @@ import classify from "./classify"
 import home from "./home"
 import mine from "./mine"
 import seek from "./seek"
+import activity from "./activity"
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -16,7 +17,8 @@ const router = new VueRouter({
         home,
         classify,
         mine,
-        seek
+        seek,
+        activity
     ]
 })
 

@@ -100,7 +100,10 @@
 // import { classifyApi } from "@api"
 export default {
   name:"classify",
-  
+    //  async created(){
+  //  let data = await classifyApi();
+  //   console.log(data);
+  // }
 };
 </script>
 
@@ -126,6 +129,7 @@ body {
 .content {
   margin-top: 0.15rem;
   padding: 0 0.2rem;
+  padding-top: .85rem;
 }
 
 .content_list {

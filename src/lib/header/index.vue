@@ -8,23 +8,63 @@
     </div>
     <!-- 导航 -->
     <ul class="nav_classify">
-      <li>全国</li>
-      <li>全部分类</li>
-      <li>全部时间</li>
+      <li @click="hanleidcy()">全国</li>
+      <li @click="hanleid()">全部分类</li>
+      <li @click="hanltime()">全部时间</li>
     </ul>
+    <Nav v-show="flag" />
+    <City v-show="flagcy" />
+    <Time v-show="flagtime" />
   </div>
 </template>
 
 <script>
+import Nav from "@components/nav";
+import City from "@components/city";
+import Time from "@components/time";
 export default {
-   name:"Aheader"
+  name: "Aheader",
+  data() {
+    return {
+      flag: false,
+      flagcy: false,
+      flagtime: false
+    };
+  },
+  components: {
+    Nav,
+    City,
+    Time
+  },
+  methods: {
+    hanleid() {
+      this.flagcy = false;
+      this.flagtime = false;
+      this.flag = !this.flag;
+    },
+    hanleidcy() {
+      this.flag = false;
+      this.flagtime = false;
+      this.flagcy = !this.flagcy;
+    },
+    hanltime() {
+      this.flagcy = false;
+      this.flag = false;
+      this.flagtime = !this.flagtime;
+    }
+  }
 };
 </script>
 
 
 <style>
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 5;
+  background: #fff;
   /* height: 0.88rem;
   background: #c33;
   display: flex;
