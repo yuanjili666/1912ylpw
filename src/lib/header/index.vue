@@ -12,9 +12,9 @@
       <li @click="hanleid()">全部分类</li>
       <li @click="hanltime()">全部时间</li>
     </ul>
-    <Nav v-show="flag" />
-    <City v-show="flagcy" />
-    <Time v-show="flagtime" />
+    <Nav v-if="flag" />
+    <City v-if="flagcy" />
+    <Time v-if="flagtime" />
   </div>
 </template>
 

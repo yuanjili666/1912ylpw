@@ -1,8 +1,8 @@
 <template>
   <div>
-      home
+      <!-- home -->
 <!-- <DetailPages/> -->
-      <Time/>
+      <!-- <Time/> -->
   </div>
 </template>
 

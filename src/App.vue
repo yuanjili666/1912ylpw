@@ -18,21 +18,21 @@ export default {
   //   console.log(data);
   // }
 
-  created(){
-       axios({
-      method:"GET",
-      url:"/server/category/default.json"
-    }).then((data)=>{
-      let hen=data.data.data;
-       console.log(data);
-       console.log(data.data.data.allkeyList);
-        console.log(data.data.data.fcitys);
-       console.log(data.data.data.searMap);
-      console.log(data.status);
-        console.log(hen.pagerMemory.fistPage);
+  // created(){
+  //      axios({
+  //     method:"GET",
+  //     url:"/server/category/default.json"
+  //   }).then((data)=>{
+  //     let hen=data.data.data;
+  //      console.log(data);
+  //      console.log(data.data.data.allkeyList);
+  //       console.log(data.data.data.fcitys);
+  //      console.log(data.data.data.searMap);
+  //     console.log(data.status);
+  //       console.log(hen.pagerMemory.fistPage);
       
-    })
-  }
+  //   })
+  // }
 
 };
 </script>
