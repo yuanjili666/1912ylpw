@@ -18,3 +18,12 @@ export const shuoxiApi = () =>http({
     method:"get",
     url:"server/opera/list.json",
 })
+
+/* 城市列表： https://m.228.cn/server/content/city/list.json
+"hotCitys":热门城市
+"fcitys":普通城市
+*/
+export const cityApi = () =>http({
+    method:"get",
+    url:"server/content/city/list.json",
+})

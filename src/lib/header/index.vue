@@ -12,9 +12,9 @@
       <li @click="hanleid()">全部分类</li>
       <li @click="hanltime()">全部时间</li>
     </ul>
-    <Nav v-if="flag" />
-    <City v-if="flagcy" />
-    <Time v-if="flagtime" />
+    <Nav v-show="flag" />
+    <City v-show="flagcy" />
+    <Time v-show="flagtime" />
   </div>
 </template>
 
@@ -114,13 +114,6 @@ export default {
   content: "";
   top: 0.08rem;
   right: 0.08rem;
-  /* width: 0.1rem;
-    height: 0.1rem;
-    border: 0.1rem solid red;
-    border-width: 0 0.1rem 0.1rem 0; */
-  /* transform: rotate(45deg); */
-  /* border: 0.06rem solid #fff; */
-  /* border: nonel; */
   border-right: 0.05rem solid rgba(255, 255, 2550, 0.1);
   border-left: 0.05rem solid rgba(255, 255, 255, 0.1);
   border-top: 0.05rem solid #b22222;
