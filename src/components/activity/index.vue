@@ -1,51 +1,82 @@
 <template>
     
     <div id="box">
-        <!-- 活动页面，顶部头 -->
+        <!-- 顶部头 -->
         <div class="hear">
-            <i class="iconfont icon-jiantou-copy" @click="fanhuihanle"></i>
+            <i class="iconfont icon-jiantou-copy"></i>
             <span>活动专区</span>
             <i></i>
         </div>
-        <div class="activity" v-for="(huodong,hd) in huodongList" :key="hd" >
+        <div class="activity">
 
             <div class="content">
                 <div class="content_img">
-                    <img :src="'http://static.228.cn/'+huodong.IMG">
+                    <img src="http://static.228.cn/upload/2019/05/07/1557211136696_s9i7_m1.jpg">
                 </div>
                 <div class="content_bt">
-                    <p>{{huodong.REMARK}}</p>
+                    <p>惹急偶尔圣诞节佛惹急偶尔圣诞惹急偶尔圣诞山</p>
                 </div>
             </div>
+
+            <!-- 1 -->
+            <div class="content">
+                <div class="content_img">
+                    <img src="http://static.228.cn/upload/2019/09/02/1567390905969_u4r7_m1.jpg">
+                </div>
+                <div class="content_bt">
+                    <p>惹急偶尔圣急偶尔圣诞山</p>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="content">
+                <div class="content_img">
+                    <img src="http://static.228.cn/upload/2018/05/22/1526977155309_b9e5_m1.jpg">
+                </div>
+                <div class="content_bt">
+                    <p>惹急偶尔圣诞节佛惹急偶尔圣诞惹急偶尔圣诞山</p>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="content">
+                <div class="content_img">
+                    <img src="http://static.228.cn/upload/2018/07/27/1532681634284_l7u8_m1.jpg">
+                </div>
+                <div class="content_bt">
+                    <p>惹急偶尔圣圣诞山</p>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="content">
+                <div class="content_img">
+                    <img src="http://static.228.cn/upload/2018/10/08/1538991976758_b1v1_m1.jpg">
+                </div>
+                <div class="content_bt">
+                    <p>惹急偶尔圣诞惹急偶尔圣诞山</p>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="content">
+                <div class="content_img">
+                    <img src="http://static.228.cn/upload/2019/05/07/1557211136696_s9i7_m1.jpg">
+                </div>
+                <div class="content_bt">
+                    <p>惹急偶尔圣诞节惹急偶尔圣诞山</p>
+                </div>
+            </div>
+
         </div>
 
     </div>
 
 </template>
 <script>
-import { fenleiApi } from "@api";
 export default {
-    name:"activity",
-    async created() {
-    let data = await fenleiApi();
-    // console.log(data.data.subjectPage.list);
-    this.huodongList=data.data.subjectPage.list;
-    console.log(this.huodongList);
-  },
-
- data() {
-    return {
-    huodongList:[]
-    };
-  },
-  methods:{
-       fanhuihanle(){
-      this.$router.back()
-    }
-  }
+    
 }
 </script>
-<style scoped>
+
+
+<style>
  /* 头部 导航*/
         .hear {
             height: .4rem;
@@ -55,9 +86,6 @@ export default {
 
         body {
             font-size: 0.16rem;
-        }
-        #box{
-            padding-bottom: .5rem;
         }
 
         .hear {
@@ -92,7 +120,7 @@ export default {
 
         .content_img {
             height: 1.5rem;
-            /* background: saddlebrown; */
+            background: saddlebrown;
         }
 
         .content_img>img {

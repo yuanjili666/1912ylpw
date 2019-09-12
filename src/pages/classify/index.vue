@@ -1,71 +1,121 @@
 <template>
   <div id="box">
-    <div class="box_u"></div>
-    <Aheader />
-    <div class="wrapper" ref="wrapper">
-      <!-- <div class="wtp_app"> -->
-      <!-- 分类，内容及盒子 -->
-      <div class="content" v-show="1">
-        <div class="content_list" v-for="(item,index) in classifyList" :key="index">
-          <!-- list_lf，开始 -->
-          <div class="list_lf">
-            <i :class="item.status==1? 'list_ishou i6':'list_ishou i5'" v-html="item.status==0 ?'售票中' :'预订'"></i>
-            <img :src="'http://static.228.cn/'+item.pbigimg+'!t120x160.jpg'" />
-          </div>
-           <!-- list_lf 结束 -->
-         <!-- list_rt 开始 --> 
-          <div class="list_rt">
-            <h3>{{item.name}}</h3>
-            <p>
-              <span>{{item.begindate}}</span>~
-              <span>{{item.enddate}}</span>
-            </p>
-            <p>{{item.vname}}</p>
-            <span><i>{{(item.minprice)*100/100}}</i>-<i>{{item.maxprice}}</i><em>元</em></span>
-          </div>
-          <!-- list_rt 结束 -->
-        </div>
 
+    <Aheader/>
+   
+    <!-- 内容及盒子 -->
+    <div class="content page">
+      <div class="content_list">
+        <div class="list_lf">
+          <i class="list_ishou">售票中</i>
+          <img
+            src="http://static.228.cn/upload/2019/09/06/AfterTreatment/1567755066414_d4f7-0.jpg!t120x160.jpg"
+          />
+        </div>
+        <div class="list_rt">
+          <h3>我等等得到的</h3>
+          <p>2019.10.03~2019.10.27</p>
+          <p>天乐元大西路等</p>
+          <span>
+            280-380
+            <em>元</em>
+          </span>
+        </div>
       </div>
-      <!-- </div> -->
+      <!-- 内容01 -->
+      <div class="content_list">
+        <div class="list_lf">
+          <i class="list_iyushou">预订</i>
+          <img
+            src="http://static.228.cn/upload/2019/09/05/AfterTreatment/1567673145844_j8c6-0.jpg!t120x160.jpg"
+          />
+        </div>
+        <div class="list_rt">
+          <h3>我等等梵蒂冈梵蒂冈大幅度发鬼地方大幅度发得到的</h3>
+          <p>2019.10.03~2019.10.27</p>
+          <p>天乐元大西路等</p>
+          <span>
+            280-380
+            <em>元</em>
+          </span>
+        </div>
+      </div>
+      <!-- 内容03 -->
+      <div class="content_list">
+        <div class="list_lf">
+          <img
+            src="http://static.228.cn/upload/2019/09/05/AfterTreatment/1567672872865_l1l6-0.jpg!t120x160.jpg"
+          />
+        </div>
+        <div class="list_rt">
+          <h3>我等等得到的</h3>
+          <p>2019.10.03~2019.10.27</p>
+          <p>天乐元大西路等</p>
+          <span>
+            280-380
+            <em>元</em>
+          </span>
+        </div>
+      </div>
+      <!-- 内容4 -->
+      <div class="content_list">
+        <div class="list_lf">
+          <img
+            src="http://static.228.cn/upload/2019/08/31/AfterTreatment/1567239080055_a1w2-0.jpg!t120x160.jpg"
+          />
+        </div>
+        <div class="list_rt">
+          <h3>我等等得到的</h3>
+          <p>2019.10.03~2019.10.27</p>
+          <p>天乐元大西路等</p>
+          <span>
+            280-380
+            <em>元</em>
+          </span>
+        </div>
+      </div>
+      <!-- 内容5 -->
+      <div class="content_list">
+        <div class="list_lf">
+          <img
+            src="http://static.228.cn/upload/2019/08/31/AfterTreatment/1567239080055_a1w2-0.jpg!t120x160.jpg"
+          />
+        </div>
+        <div class="list_rt">
+          <h3>我等等得到的</h3>
+          <p>2019.10.03~2019.10.27</p>
+          <p>天乐元大西路等</p>
+          <span>
+            280-380
+            <em>元</em>
+          </span>
+        </div>
+      </div>
+      <!-- 内容6 -->
     </div>
+     <Foot/>
   </div>
 </template>
 
 <script>
-import { classifyApi } from "@api";
-import BScroll from "better-scroll";
+// import { classifyApi } from "@api"
+import Foot from "@components/foot"
 export default {
-  name: "classify",
-  async created() {
-    let data = await classifyApi();
-    // console.log(data.data.pagerMemoryList);
-    this.classifyList = data.data.pagerMemoryList;
-  },
-  data() {
-    return {
-      classifyList: []
-    };
-  },
-  mounted() {
-    new BScroll(this.$refs.wrapper);
-  }
+  name:"classify",
+  components:{
+       Foot
+    }
+    //  async created(){
+  //  let data = await classifyApi();
+  //   console.log(data);
+  // }
 };
 </script>
 
 <style>
 /* 分类页面的样式 */
-i {
-  font-style: normal;
-}
 
-.box_u {
-  height: 0.85rem;
-}
-/* #app {
-  height: 100%;
-} */
-#app {
+#app{
   height: 100%;
 }
 
@@ -73,23 +123,18 @@ body {
   font-size: 0.16rem;
 }
 
-#box {
-  /* height: 100%; */
+#box{
+  height: 100%;
   width: 100%;
-  /* padding-top: 0.85rem; */
-  padding-bottom: 0.5rem;
-}
-.wrapper {
-  /* height: 100%; */
-  height: 5rem;
 }
 
 /* 列表内容 */
 
+
 .content {
-  /* margin-top: 0.15rem; */
+  margin-top: 0.15rem;
   padding: 0 0.2rem;
-  /* padding-bottom: .5rem; */
+  padding-top: .85rem;
 }
 
 .content_list {
@@ -124,15 +169,9 @@ body {
   padding: 0 0.05rem;
   left: 0;
   text-align: center;
-
+  background: linear-gradient(to right, #ff7e6f, #ff2959);
   /* background: linear-gradient(to right, #3dd9c1, #00a0c2); */
   font-style: normal;
-}
-.i6 {
-  background: linear-gradient(to right, #3dd9c1, #00a0c2);
-}
-.i5 {
-  background: linear-gradient(to right, #ff7e6f, #ff2959);
 }
 .list_iyushou {
   display: block;

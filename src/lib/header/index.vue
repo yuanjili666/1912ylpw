@@ -2,7 +2,7 @@
   <div id="header">
     <!-- 顶部头 -->
     <div class="hear">
-      <i class="iconfont icon-jiantou-copy hongse" @click="fanhuihanle"></i>
+      <i class="iconfont icon-jiantou-copy hongse"></i>
       <span>分类</span>
       <i class="iconfont icon-sousuo hongse"></i>
     </div>
@@ -51,9 +51,6 @@ export default {
       this.flagcy = false;
       this.flag = false;
       this.flagtime = !this.flagtime;
-    },
-    fanhuihanle(){
-      this.$router.back()
     }
   }
 };
@@ -117,6 +114,13 @@ export default {
   content: "";
   top: 0.08rem;
   right: 0.08rem;
+  /* width: 0.1rem;
+    height: 0.1rem;
+    border: 0.1rem solid red;
+    border-width: 0 0.1rem 0.1rem 0; */
+  /* transform: rotate(45deg); */
+  /* border: 0.06rem solid #fff; */
+  /* border: nonel; */
   border-right: 0.05rem solid rgba(255, 255, 2550, 0.1);
   border-left: 0.05rem solid rgba(255, 255, 255, 0.1);
   border-top: 0.05rem solid #b22222;

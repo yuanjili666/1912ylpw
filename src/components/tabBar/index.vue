@@ -56,6 +56,10 @@ export default {
         bottom:0;
         background:#fff;
         border-top:1px solid #ccc;
+        display:flex;
+        z-index: 99;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0px 0px 8px 0px rgba(95, 100, 106, 0.15)
     }
 
     #footer ul{

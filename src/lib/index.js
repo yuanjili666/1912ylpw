@@ -1,7 +1,9 @@
 // import Header from "./header/index.vue"   //引入的头部的组件
 import Aheader from "./header/index.vue"
+import Carousel from "./carousel";
 const components = [   
     Aheader,
+    Carousel
 ]
 
 // console.log(Header);
