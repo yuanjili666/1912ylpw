@@ -6,7 +6,7 @@
       </div>
       <div class="content">
         <div class="ioc">
-          <span class="iconfont icon-jiantou-copy"></span>
+          <span class="iconfont icon-jiantou-copy" @click="fanhui"></span>
           <span>
             <span class="iconfont icon-shoucang"></span>
             <span class="iconfont icon-shezhi"></span>
@@ -101,7 +101,12 @@
 
 <script>
 export default {
-    nameL:DetailPages
+    nameL:"DetailPages",
+    methods:{
+      fanhui(){
+        this.$router.back();
+      }
+    }
 };
 </script>
 

@@ -2,8 +2,14 @@
   <div class="nav_content">
     <div class="nav_to">
       <ul class="nav_ul">
-        <!-- <li v-for="(fenleilist,ffl) in  fenleiList" :key="ffl">{{fenleilist.title}}</li> -->
-         <router-link :to="fenleilist.path" tag="li" v-for="(fenleilist,ffl) in  fenleiList" :key="ffl">{{fenleilist.title}}</router-link>
+        <!-- <li v-for="(fenleilist,ffl) in  fenleiList" :key="ffl" @click="hanlere(ffl)" >
+          <a href="fenleilist.path" :class="fls==ffl ? 'res':''">{{fenleilist.title}}</a></li> -->
+        <router-link
+          :to="fenleilist.path"
+          tag="li"
+          v-for="(fenleilist,ffl) in  fenleiList"
+          :key="ffl"
+        >{{fenleilist.title}}</router-link>
       </ul>
     </div>
   </div>
@@ -14,6 +20,7 @@ export default {
   name: "Nav",
   data() {
     return {
+      fls:-1,
       fenleiList: [
         {
           title: "全部分类",
@@ -21,40 +28,48 @@ export default {
         },
           {
           title: "演唱会",
-          path: "/"
+          path: "/activity"
         },
           {
           title: "话剧舞台剧",
-          path: "/"
+          path: "/shuoxi"
         },
           {
           title: "音乐会",
-          path: "/"
+          path: "/DetailPages"
         }
         ,  {
           title: "舞蹈芭蕾",
-          path: "/"
+          path: "/activity"
         }
         ,
           {
           title: "戏曲综艺",
-          path: "/"
+          path: "/activity"
         },
           {
           title: "体育赛事",
-          path: "/"
+          path: "/DetailPages"
         },
           {
           title: "儿童亲子",
-          path: "/"
+          path: "/activity"
         },
           {
           title: "休息娱乐",
-          path: "/"
+          path: "/activity"
         }
       ]
     };
+  },
+  methods:{
+    hanlere(ffl){
+      // alert(5555);
+       console.log(ffl);
+        this.fls=ffl;
+    }
   }
+
 };
 </script>
 
@@ -85,7 +100,10 @@ export default {
   line-height: 0.45rem;
   text-align: center;
 }
-
+ul .res{  
+        color:#c33;
+    }
+    
 /* .router-link-active{  
         color:#c33;
     } */

@@ -3,7 +3,7 @@
     <div id="box">
         <!-- 活动页面，顶部头 -->
         <div class="hear">
-            <i class="iconfont icon-jiantou-copy"></i>
+            <i class="iconfont icon-jiantou-copy" @click="fanhuihanle"></i>
             <span>活动专区</span>
             <i></i>
         </div>
@@ -37,6 +37,11 @@ export default {
     return {
     huodongList:[]
     };
+  },
+  methods:{
+       fanhuihanle(){
+      this.$router.back()
+    }
   }
 }
 </script>

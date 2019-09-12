@@ -2,7 +2,14 @@
   <div class="nav_content">
     <div class="nav_to">
       <ul class="nav_ul">
-        <li v-for="(tiamfor,tf) in tiamelist" :key="tf">{{tiamfor.title}}</li>
+        <!-- <li v-for="(tiamfor,tf) in tiamelist" :key="tf">{{tiamfor.title}}</li> -->
+
+
+
+
+ <li v-for="(tiamfor,tf) in   tiamelist" :key="tf" @click="hanlere(tf)" >
+          <a href=" tiamelist.path" :class="fls==tf ? 'res':''">{{tiamfor.title}}</a></li>
+
       </ul>
     </div>
   </div>
@@ -13,6 +20,7 @@ export default {
   name: "Time",
   data() {
     return {
+        fls:-1,
       tiamelist: [
         {
           title: "全部分类",
@@ -44,6 +52,13 @@ export default {
         }
       ]
     };
+  },
+   methods:{
+    hanlere(ffl){
+      // alert(5555);
+       console.log(ffl);
+        this.fls=ffl;
+    }
   }
 };
 </script>
@@ -75,4 +90,7 @@ export default {
   line-height: 0.45rem;
   text-align: center;
 }
+ul .res{  
+        color:#c33;
+    }
 </style>

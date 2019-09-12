@@ -6,6 +6,7 @@ import mine from "./mine"
 import seek from "./seek"
 import activity from "./activity"
 import shuoxi from "./shuoxi"
+import DetailPages from "./detaipages"
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -20,7 +21,9 @@ const router = new VueRouter({
         mine,
         seek,
         activity,
-        shuoxi
+        shuoxi,
+        DetailPages
+        
     ]
 })
 

@@ -2,7 +2,7 @@
   <div id="header">
     <!-- 顶部头 -->
     <div class="hear">
-      <i class="iconfont icon-jiantou-copy hongse"></i>
+      <i class="iconfont icon-jiantou-copy hongse" @click="fanhuihanle"></i>
       <span>分类</span>
       <i class="iconfont icon-sousuo hongse"></i>
     </div>
@@ -51,6 +51,9 @@ export default {
       this.flagcy = false;
       this.flag = false;
       this.flagtime = !this.flagtime;
+    },
+    fanhuihanle(){
+      this.$router.back()
     }
   }
 };
